@@ -40,6 +40,9 @@ thermistor://1.12924E-03_2.34108E-04_0.87755E-07/273.16~0.009K10000.017~0.006_27
 
 #### Beta: 
 
+
+##### Without calibration points:
+
 ```
 thermistor://B[Beta]_[ResistanceAt25(Ohms)]
 ```
@@ -48,6 +51,18 @@ Example:
 
 ```
 thermistor://B3799.41_10000.1
+```
+
+##### With calibration points:
+
+```
+thermistor://B[Beta]_[ResistanceAt25(Ohms)]/[Temperature(Kelvin)~Uncertainty(Kelvin)]K[Resistance(Ohms)~Uncertainty(Ohms)]_Temperature(Kelvin)~Uncertainty(Kelvin)]K[Resistance(Ohms)~Uncertainty(Ohms)
+```
+
+Example:
+
+```
+thermistor://B3799.41_10000.1/273.16~0.009K10000.017~0.006_273.16~0.009K10000.017~0.006
 ```
 
 ## Full v1.0
