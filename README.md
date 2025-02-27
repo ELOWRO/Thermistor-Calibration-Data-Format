@@ -1,6 +1,10 @@
 🌡Thermistor Calibration Data Format
 ====================================
 
+## JSON Schema
+
+https://calibration.equipment/schemas/thermistor/v1.0.json
+
 ## Compact v1.0
 
 This format is dedicated for QR Codes and URLs but can be used for any purpose.

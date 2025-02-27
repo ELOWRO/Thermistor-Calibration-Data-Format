@@ -1,0 +1,97 @@
+{
+    "$id": "https://calibration.equipment/schemas/thermistor/v1.0.json",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "title": "Thermistor Calibration Data Format",
+    "description": "JSON schema for thermistor calibration data in Full v1.0 format",
+    "type": "object",
+    "oneOf": [
+      {
+        "title": "Steinhart-Hart Model",
+        "required": ["a", "b", "c"],
+        "properties": {
+          "a": {
+            "type": "number",
+            "description": "Steinhart-Hart coefficient A"
+          },
+          "b": {
+            "type": "number",
+            "description": "Steinhart-Hart coefficient B"
+          },
+          "c": {
+            "type": "number",
+            "description": "Steinhart-Hart coefficient C"
+          },
+          "calibration": {
+            "type": "array",
+            "description": "Calibration points",
+            "items": {
+              "type": "object",
+              "required": ["T", "R"],
+              "properties": {
+                "T": {
+                  "type": "number",
+                  "description": "Temperature in Kelvin"
+                },
+                "dT": {
+                  "type": "number",
+                  "description": "Temperature uncertainty in Kelvin"
+                },
+                "R": {
+                  "type": "number",
+                  "description": "Resistance in Ohms"
+                },
+                "dR": {
+                  "type": "number",
+                  "description": "Resistance uncertainty in Ohms"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      },
+      {
+        "title": "Beta Model",
+        "required": ["beta", "R25"],
+        "properties": {
+          "beta": {
+            "type": "number",
+            "description": "Beta coefficient"
+          },
+          "R25": {
+            "type": "number",
+            "description": "Resistance in Ohms at +25 Celsius"
+          },
+          "calibration": {
+            "type": "array",
+            "description": "Calibration points",
+            "items": {
+              "type": "object",
+              "required": ["T", "R"],
+              "properties": {
+                "T": {
+                  "type": "number",
+                  "description": "Temperature in Kelvin"
+                },
+                "dT": {
+                  "type": "number",
+                  "description": "Temperature uncertainty in Kelvin"
+                },
+                "R": {
+                  "type": "number",
+                  "description": "Resistance in Ohms"
+                },
+                "dR": {
+                  "type": "number",
+                  "description": "Resistance uncertainty in Ohms"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    ]
+  }
